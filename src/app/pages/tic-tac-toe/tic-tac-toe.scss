@@ -46,27 +46,15 @@
   cursor: pointer;
 }
 
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 5px #00ff88;
-  }
-  to {
-    box-shadow: 0 0 15px #00ff88;
-  }
-}
-
-.cell.winner {
-  animation: pulse 0.3s infinite alternate;
-}
-
 /* jo kolona e fundit , div ne pozicionet 3,6,9 */
 .cell:not(:nth-child(3n)) {
-  border-right: 4px solid #ffffff33;
+  // border-right: 4px solid #ffffff33;
+  border-right: 4px solid #ffffff;
 }
 
 /* jo rreshti i fundit , div ne pozicionet 3,2,1*/
 .cell:not(:nth-last-child(-n + 3)) {
-  border-bottom: 4px solid #ffffff33;
+  border-bottom: 4px solid #ffffff;
 }
 
 .sign_container {
@@ -96,6 +84,21 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes pulse {
+  from {
+    filter: drop-shadow(0 0 8px rgba(0, 255, 100, 0.4));
+    transform: scale(0.95);
+  }
+  to {
+    filter: drop-shadow(0 0 16px rgba(0, 255, 100, 0.7));
+    transform: scale(1);
+  }
+}
+
+.winner {
+  animation: pulse 0.3s infinite alternate ease-in-out;
 }
 
 .info_container {
