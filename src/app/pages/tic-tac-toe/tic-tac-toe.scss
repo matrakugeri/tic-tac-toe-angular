@@ -1,17 +1,93 @@
-*,
-::after,
-::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit;
+.heading {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 800;
+  background-image: linear-gradient(to right, #e98686, #838b0a);
+  text-align: center;
+  margin-top: 1.2rem;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0;
 }
 
-html {
-  font-size: 62.5%;
+.game_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 4rem;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  box-sizing: border-box;
-  background-color: black;
+.tic-tac-toe_container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  grid-template-rows: repeat(3, minmax(50px, 1fr));
+  width: 500px;
+  height: 400px;
+  max-width: 500px;
+  max-height: 400px;
+  @media (max-width: 32.5em) {
+    width: 350px;
+    max-width: 350px;
+    height: 300px;
+    max-height: 300px;
+  }
+  @media (max-width: 24.5em) {
+    width: 300px;
+    max-width: 300px;
+    height: 250px;
+    max-height: 250px;
+  }
+}
+
+.cell {
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 5px #00ff88;
+  }
+  to {
+    box-shadow: 0 0 15px #00ff88;
+  }
+}
+
+.cell.winner {
+  animation: pulse 0.3s infinite alternate;
+}
+
+/* jo kolona e fundit , div ne pozicionet 3,6,9 */
+.cell:not(:nth-child(3n)) {
+  border-right: 4px solid #ffffff33;
+}
+
+/* jo rreshti i fundit , div ne pozicionet 3,2,1*/
+.cell:not(:nth-last-child(-n + 3)) {
+  border-bottom: 4px solid #ffffff33;
+}
+
+.sign_container {
+  width: 100%;
+  height: 100%;
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #ffffff, #46acd8);
+  background-clip: text;
+  color: transparent;
+  animation: fadeIn ease 0.4s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
