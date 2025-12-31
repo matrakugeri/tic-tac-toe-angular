@@ -1,3 +1,7 @@
+[build]
+  publish = "dist/tic-tac-toe-angular/browser"
+  command = "ng build --configuration production"
+
 [[redirects]]
   from = "/TicTacToe/*"
   to = "/TicTacToe/index.html"
