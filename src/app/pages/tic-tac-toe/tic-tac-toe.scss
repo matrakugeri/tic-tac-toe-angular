@@ -26,12 +26,14 @@
   height: 400px;
   max-width: 500px;
   max-height: 400px;
+
   @media (max-width: 32.5em) {
     width: 350px;
     max-width: 350px;
     height: 300px;
     max-height: 300px;
   }
+
   @media (max-width: 24.5em) {
     width: 300px;
     max-width: 300px;
@@ -79,6 +81,10 @@
   background-clip: text;
   color: transparent;
   animation: fadeIn ease 0.4s;
+
+  @media (max-width: 32.5em) {
+    font-size: 7rem;
+  }
 }
 
 @keyframes fadeIn {
@@ -90,6 +96,13 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.info_container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info_paragraph {
