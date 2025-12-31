@@ -117,12 +117,12 @@ import { Component, signal } from '@angular/core';
 
 @keyframes pulse {
   from {
-    filter: drop-shadow(0 0 8px rgba(0, 255, 100, 0.4));
+    filter: drop-shadow(0 0 8px rgba(8, 238, 100, 0.4));
     transform: scale(0.95);
   }
   to {
     filter: drop-shadow(0 0 16px rgba(0, 255, 100, 0.7));
-    transform: scale(1);
+    transform: scale(1.2);
   }
 }
 
