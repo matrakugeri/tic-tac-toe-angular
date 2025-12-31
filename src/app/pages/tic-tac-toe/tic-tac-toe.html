@@ -1,9 +1,9 @@
 <div class="game_container">
   <div class="tic-tac-toe_container">
     @for(cell of board(); let i = $index;track i){
-    <div class="cell" (click)="play(i)" [class.winner]="winningCells().includes(i)">
+    <div class="cell" (click)="play(i)">
       @if(cell){
-      <div class="sign_container">
+      <div class="sign_container" [class.winner]="winningCells().includes(i)">
         {{ cell }}
       </div>
       }
@@ -14,7 +14,7 @@
     @if (!winner() && !isFilled) {
     <p class="info_paragraph">Player {{ player() }} ({{ turn() }}) turn</p>
     } @else if (winner()) {
-    <p class="info_paragraph">Player {{ winner() }} won!</p>
+    <p class="info_paragraph">Player {{ winner() === 'X' ? 1 : 2 }} ({{ winner() }}) won!</p>
     } @else if (!winner() && isFilled) {
     <p class="info_paragraph">TIE</p>
     }
