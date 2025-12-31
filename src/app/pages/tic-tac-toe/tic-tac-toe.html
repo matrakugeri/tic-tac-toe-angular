@@ -10,4 +10,14 @@
     </div>
     }
   </div>
+  <div class="info_container" [class.x-turn]="turn() === 'X'" [class.o-turn]="turn() === 'O'">
+    @if (!winner() && !isFilled) {
+    <p class="info_paragraph">Player {{ player() }} ({{ turn() }}) turn</p>
+    } @else if (winner()) {
+    <p class="info_paragraph">Player {{ winner() }} won!</p>
+    } @else if (!winner() && isFilled) {
+    <p class="info_paragraph">TIE</p>
+    }
+    <button (click)="resetGame()" class="reset-btn">Reset Game</button>
+  </div>
 </div>
