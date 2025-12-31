@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { TicTacToe } from './pages/tic-tac-toe/tic-tac-toe';
 
 export const routes: Routes = [
   {
