@@ -47,7 +47,22 @@ export class TicTacToe {
       ) {
         this.winner.set(this.turn());
         this.winningCells.set(combo);
+        // console.log(this.winningCells());
+        return;
       }
     }
+    this.winner.set(null);
+  }
+
+  get isFilled(): boolean {
+    return this.board().every((c) => c !== null);
+  }
+
+  resetGame() {
+    this.board.set(Array(9).fill(null));
+    this.turn.set('X');
+    this.player.set(1);
+    this.winner.set(null);
+    this.winningCells.set([]);
   }
 }
