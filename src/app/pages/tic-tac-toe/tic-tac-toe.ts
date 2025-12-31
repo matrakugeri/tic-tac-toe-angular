@@ -22,4 +22,14 @@ export class TicTacToe {
     [0, 4, 8],
     [2, 4, 6],
   ];
+
+  play(index: number): void {
+    if (this.board()[index] || this.winner()) return;
+    this.board.update((oldBoard) => {
+      const updatedBoard = [...oldBoard];
+      updatedBoard[index] = this.turn();
+      console.log(updatedBoard);
+      return updatedBoard;
+    });
+  }
 }
