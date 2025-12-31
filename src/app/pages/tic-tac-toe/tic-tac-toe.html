@@ -2,7 +2,7 @@
   <div class="tic-tac-toe_container">
     @for(cell of board();let i= $index;track i){
     <div class="cell" (click)="play(i)">
-      @if(cell){
+      @if(cell) {
       <div class="sign_container">
         {{ cell }}
       </div>
