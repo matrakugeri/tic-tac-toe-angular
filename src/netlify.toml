@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/TicTacToe/*"
+  to = "/TicTacToe/index.html"
+  status = 200
